@@ -14,7 +14,6 @@ T discriminant(T a, T b, T c)
     return result;
 }
 
-// TODO: GITHUB REPO!!!
 int main()
 {
     char again;
@@ -51,6 +50,8 @@ int main()
         } while(toupper(again) != 'N' && toupper(again) != 'Y');
 
     } while(toupper(again) != 'N');
+
+    std::cout << std::endl << "Exiting program..." << std::endl;
         
 
     return 0;
