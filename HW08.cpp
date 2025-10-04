@@ -47,9 +47,9 @@ int main()
         {
             std::cout << std::endl << "Would you like to calculate another discrimant? (Y/N): ";
             std::cin >> again;
-        } while(toupper(again) != 'N' && toupper(again) != 'Y');
+        } while(std::toupper(again) != 'N' && std::toupper(again) != 'Y');
 
-    } while(toupper(again) != 'N');
+    } while(std::toupper(again) != 'N');
 
     std::cout << std::endl << "Exiting program..." << std::endl;
         
