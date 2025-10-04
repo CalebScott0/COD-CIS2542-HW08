@@ -18,10 +18,10 @@ int main()
 {
     char again;
 
-    int a;
-    int b;
-    int c;
-    int discriminantValue;
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    int discriminantValue = 0;
 
     do
     {
@@ -36,17 +36,20 @@ int main()
         try
         { 
             discriminantValue = discriminant(a, b, c);
-            std::cout << std::endl << "Value of the discrimant: " << discriminantValue << std::endl;
+            std::cout << std::endl;
+            std::cout << "Value of the discrimant: " << discriminantValue << std::endl;
         }
         catch(std::exception)
         {
-            std::cout << std::endl << "Discriminant(a, b, c): Negative Discriminant Encountered" << std::endl;
+            std::cout << std::endl;
+            std::cout << "Discriminant(a, b, c): Negative Discriminant Encountered" << std::endl;
         }
 
         do
         {
             std::cout << std::endl << "Would you like to calculate another discrimant? (Y/N): ";
             std::cin >> again;
+            //TODO: make more sense to do again = toupper(again)?
         } while(std::toupper(again) != 'N' && std::toupper(again) != 'Y');
 
     } while(std::toupper(again) != 'N');
