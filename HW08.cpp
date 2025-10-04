@@ -18,10 +18,10 @@ int main()
 {
     char again;
 
-    int a = 0;
-    int b = 0;
-    int c = 0;
-    int discriminantValue = 0;
+    double a = 0;
+    double b = 0;
+    double c = 0;
+    double discriminantValue = 0;
 
     do
     {
