@@ -1,11 +1,12 @@
 #include <string>
 #include <iostream>
+#include <iomanip>
 #include <cctype>
 
 template <typename T>
 T discriminant(T a, T b, T c)
 {
-    T result = (b * b) - (4 * a * c);
+    T result = (b * b) - (4.0 * a * c);
     if(result < 0)
     {
         throw std::exception();
@@ -18,10 +19,10 @@ int main()
 {
     char again;
 
-    double a = 0;
-    double b = 0;
-    double c = 0;
-    double discriminantValue = 0;
+    double a = 0.0;
+    double b = 0.0;
+    double c = 0.0;
+    double discriminantValue = 0.0;
 
     do
     {
@@ -33,13 +34,14 @@ int main()
 
         std::cout << "Enter the value for c: ";
         std::cin >> c;
+
         try
         { 
             discriminantValue = discriminant(a, b, c);
-            std::cout << std::endl;
-            std::cout << "Value of the discrimant: " << discriminantValue << std::endl;
+            std::cout << std::endl << std::fixed << std::setprecision(2);
+            std::cout << "Value of the discriminant: " << discriminantValue << std::endl;
         }
-        catch(std::exception)
+        catch(const std::exception&)
         {
             std::cout << std::endl;
             std::cout << "Discriminant(a, b, c): Negative Discriminant Encountered" << std::endl;
@@ -47,12 +49,12 @@ int main()
 
         do
         {
-            std::cout << std::endl << "Would you like to calculate another discrimant? (Y/N): ";
+            std::cout << std::endl << "Calculate another discriminant? [Y/N]: ";
             std::cin >> again;
-            //TODO: make more sense to do again = toupper(again)?
-        } while(std::toupper(again) != 'N' && std::toupper(again) != 'Y');
+            again = toupper(again);
+        } while(again != 'N' && again != 'Y');
 
-    } while(std::toupper(again) != 'N');
+    } while(again != 'N');
 
     std::cout << std::endl << "Exiting program..." << std::endl;
         
